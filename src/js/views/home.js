@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import style from '../../css/home.scss'
 import { addBoard } from '../actions/boards.js' 
 
 const Home = ({ boards, dispatch }) => {
@@ -11,7 +12,7 @@ const Home = ({ boards, dispatch }) => {
   }
 
   return (
-    <div>
+    <div className={style.home}>
       {
         boards.map((board, i) => <h2 key={i}>{board.name}</h2>)
       }

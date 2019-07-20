@@ -17,6 +17,23 @@ module.exports = {
             loader: "html-loader"
           }
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          {
+            loader: "css-loader", // translates CSS into CommonJS
+            options: {
+              sourceMap: true,
+              modules: {
+                mode: "local",
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              }
+            }
+          },
+          "sass-loader" // compiles Sass to CSS, using Node Sass by default
+        ]
       }
     ]
   },
