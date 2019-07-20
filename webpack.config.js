@@ -44,6 +44,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    overlay: true
   }
 }
