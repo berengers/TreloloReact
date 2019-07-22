@@ -1,22 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import style from '../../css/home.scss'
-import { addBoard } from '../actions/boards.js' 
+import { createBoard } from '../actions/boards.js'
+import ThumbBoard from '../components/thumbBoard.js'
 
 const Home = ({ boards, dispatch }) => {
   
   const newBoard = () => {
-    const board = { id: 456, name: 'natalia' }
-    dispatch(addBoard(board))
+    const name = window.prompt('Donner un nom au nouveau board')
+
+    if (name) {
+      const board = { name: name }
+      dispatch(createBoard(board))
+    }
   }
 
   return (
-    <div className={style.home}>
-      {
-        boards.map((board, i) => <h2 key={i}>{board.name}</h2>)
-      }
-      <button onClick={newBoard}>1 more board</button>
+    <div className="home-44d18947">
+      <div className="boards">
+        {
+          boards.map((board, i) => <ThumbBoard key={i} data={board} />)
+        }
+        <div onClick={newBoard} className="new-board">Create new board</div>
+      </div>
     </div>
   )
 }

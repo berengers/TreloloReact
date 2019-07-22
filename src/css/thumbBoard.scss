@@ -1,0 +1,32 @@
+.thumb-board-9f507641 {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-color: $primary-color;
+  background-size: cover;
+  border-radius: 3px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    color: white;
+  }
+  &:hover::before {
+    background-color: hsla(0, 0%, 0%, 0.4);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+    background-color: hsla(0, 52%, 11%, 0.2);
+  }
+  .name {
+    position: relative;
+  }
+}

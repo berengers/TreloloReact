@@ -1,10 +1,12 @@
+import { ADD_BOARD } from '../const'
+
 const defaultBoards = [
   {
-    id: 35,
+    id: 0,
     name: 'Movies'
   },
   {
-    id: 12,
+    id: 1,
     name: 'Travels'
   }
 ]
@@ -12,7 +14,7 @@ const defaultBoards = [
 
 export function boards(state=defaultBoards, action) {
   switch (action.type) {
-    case "ADD_BOARD":
+    case ADD_BOARD:
       return [...state, action.payload.board]
     default:
       return state

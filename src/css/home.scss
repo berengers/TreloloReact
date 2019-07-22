@@ -1,6 +1,41 @@
-.home {
-  background-color: red;
-  h2 {
-    background-color: blue;
+$width-thumb: 200px;
+$height-thumb: 100px;
+$half-gutter-size: 10px;
+
+.home-44d18947 {
+  display: flex;
+  justify-content: center;
+  .boards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: $half-gutter-size;
+    width: calc(4 * #{$width-thumb} + 10 * #{$half-gutter-size});
+    > * {
+      width: $width-thumb;
+      height: $height-thumb;
+      margin: $half-gutter-size;
+    }
+    .new-board {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(9,30,66,.04);
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(9,30,66,.15);
+      }
+    }
+    @media screen and (max-width: calc(4 * #{$width-thumb} + 10 * #{$half-gutter-size} - 1px)) {
+      max-width: calc(3 * #{$width-thumb} + 8 * #{$half-gutter-size});
+    }
+    @media screen and (max-width: calc(3 * #{$width-thumb} + 8 * #{$half-gutter-size} - 1px)) {
+      max-width: calc(2 * #{$width-thumb} + 6 * #{$half-gutter-size});
+    }
+    @media screen and (max-width: calc(2 * #{$width-thumb} + 6 * #{$half-gutter-size} - 1px)) {
+      justify-content: center;
+      > * {
+        width: 80%;
+      }
+    }
   }
 }
