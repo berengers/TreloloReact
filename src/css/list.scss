@@ -1,0 +1,15 @@
+.list-918a82e5 {
+  background-color: $secondary-color;
+  color: #172b4d;
+  width: 272px;
+  max-height: calc(100vh - #{$navbar-height} - #{$headerbar-height} - 20px);
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+
+  .items {
+    overflow: auto;
+    
+  }
+}

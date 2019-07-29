@@ -1,33 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const Board = ({ currentBoard }) => {
+import Headerbar from '../components/headerbar'
+import ModalItem from '../components/modalItem'
+import List from '../components/list'
+import CreateList from '../components/createList'
 
-  const { id, name, lists } = currentBoard
+const Board = ({ currentBoard, lists }) => {
+
+  const { id, name } = currentBoard
+
   return (
-    <div>
-      <h2>{name}</h2>
-      <ul>
+    <div className="board-4f10ecaf">
+      <ModalItem />
+      <Headerbar />
+      <div className="lists">
         {
           lists.map(list => (
-            <div key={list.id}>
-              <h4>{list.name}</h4>
-              {
-                list.items.map(item => (
-                  <div key={item.id}>
-                    <span>{item.title}</span>
-                    <p>{item.description}</p>
-                  </div>
-                ))
-              }
-            </div>
+            <List list={list} key={list.id} />
           ))
         }
-      </ul>
+        <CreateList />
+      </div>
     </div>
   )
 }
 
-const mapStateToprops = ({ currentBoard }) => ({ currentBoard })
+const mapStateToprops = ({ currentBoard, lists }) => ({ currentBoard, lists })
 
 export default connect(mapStateToprops)(Board)

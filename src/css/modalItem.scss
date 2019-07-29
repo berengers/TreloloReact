@@ -1,0 +1,28 @@
+.modal-item-d152e7b8 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0, .6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    background-color: $secondary-color;
+    padding: 2% 3%;
+    width: 768px;
+    max-width: 90%;
+    z-index: 50;
+    border-radius: 3px;
+
+    h2 {
+      margin: 0;
+    }
+
+    .row {
+      margin-bottom: 24px;
+    }
+  }
+}

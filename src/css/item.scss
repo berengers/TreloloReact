@@ -1,0 +1,18 @@
+.item-79edc7b4 {
+  background-color: white;
+  padding: 6px 8px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  margin-bottom: 8px;
+  margin-right: 3px;
+  max-width: 300px;
+  min-height: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f4f5f7;
+  }
+
+  .description-icon {
+    opacity: .6;
+  }
+}

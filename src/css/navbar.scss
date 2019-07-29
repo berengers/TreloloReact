@@ -1,6 +1,9 @@
 .navbar-87b24b41 {
-  background: $primary-color;
-  height: 40px;
+  background: hsla(0, 0, 0, .15);
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: $navbar-height;
   padding: 4px;
   display: flex;
   justify-content: space-between;

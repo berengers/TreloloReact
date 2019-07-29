@@ -1,0 +1,15 @@
+.board-4f10ecaf {
+  background-color: $primary-color;
+  height: 100vh;
+  padding-top: 40px;
+  overflow: auto;
+
+  .lists {
+    display: flex;
+    align-items: flex-start;
+    & > * {
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+  }
+}
