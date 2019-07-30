@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { createBoard } from '../actions/boards.js'
+import { getBoards } from '../actions/boards.js'
+import { createBoard } from '../actions/board.js'
 import ThumbBoard from '../components/thumbBoard.js'
 
-const Home = ({ boards, dispatch }) => {
+const Home = ({ dispatch, boards }) => {
+
+  useEffect(
+    () => dispatch(getBoards()), []
+  )
   
   const newBoard = () => {
-    const name = window.prompt('Donner un nom au nouveau board')
+    const name = window.prompt('Name of board')
 
     if (name) {
       const board = { name: name }

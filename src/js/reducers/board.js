@@ -1,11 +1,15 @@
+import { RECEIVE_BOARD } from '../const'
+
 const defaultBoard = {
-  id: 456,
-  name: "Holidays"
+  id: null,
+  name: "",
+  lists: []
 }
 
 export function currentBoard(state=defaultBoard, action) {
   switch (action.type) {
-    case "":
+    case RECEIVE_BOARD:
+      return action.payload.board
     default:
       return state
   }

@@ -1,22 +1,19 @@
-import uuid from 'uuid/v4'
-import { push } from 'connected-react-router'
+import { RECEIVE_BOARDS } from '../const'
 
-export function createBoard(board) {
-  return dispatch => {
-    const newBoard = {
-      id: uuid(),
-      name: board.name
-    }
-    dispatch(addBoard(newBoard))
-    dispatch(push(`/board/${newBoard.id}`))
+
+const boards = [
+  {
+    id: 0,
+    name: 'Movies'
+  },
+  {
+    id: 1,
+    name: 'Travels'
   }
-}
+]
 
-export function addBoard(board) {
-  return {
-    type: "ADD_BOARD",
-    payload: {
-      board
-    }
+export function getBoards() {
+  return dispatch => {
+    dispatch({ type: RECEIVE_BOARDS, payload: { boards: boards } })
   }
 }

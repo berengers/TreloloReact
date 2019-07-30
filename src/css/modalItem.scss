@@ -6,10 +6,12 @@
   left: 0;
   background-color: rgba(0,0,0, .6);
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
+  z-index: 1000;
 
   .wrapper {
+    margin: 200px 0 80px;
     background-color: $secondary-color;
     padding: 2% 3%;
     width: 768px;
@@ -23,6 +25,13 @@
 
     .row {
       margin-bottom: 24px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      resize: none;
+      overflow-wrap: break-word;
     }
   }
 }

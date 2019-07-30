@@ -9,7 +9,7 @@ const App = () => (
   <div>
     <Navbar />
     <Switch>
-      <Route path="/board" component={Board} />
+      <Route path="/board/:id" component={Board} />
       <Route path="/" component={Home} />
     </Switch>
   </div>
