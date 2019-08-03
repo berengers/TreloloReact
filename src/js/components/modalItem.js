@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
-const ModalItem = ({ item, board }) => {
+const ModalItem = ({ dispatch, item, board }) => {
   
   item.comment = "comment de base"
 
@@ -12,6 +12,8 @@ const ModalItem = ({ item, board }) => {
 
 
   const { description, comment } = values
+
+  // useEffect(() => { dispatch(getItem(id)) })
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: { content: e.target.value, edit: true } })

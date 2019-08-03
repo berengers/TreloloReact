@@ -7,18 +7,17 @@ import ModalItem from '../components/modalItem'
 import List from '../components/list'
 import CreateList from '../components/createList'
 
-const Board = ({ dispatch, match, currentBoard, lists }) => {
+const Board = ({ dispatch, match, currentItem, lists }) => {
 
-  const { id, name } = currentBoard
-
-  console.log('match ---->', match)
   useEffect(
-    () => dispatch(getBoard(parseInt(match.params.id))), []
+    () => dispatch(getBoard(parseInt(match.params.id))), [match.params.id]
   )
   
   return (
     <div className="board-4f10ecaf">
-      <ModalItem />
+      {currentItem.id || currentItem.id === 0 &&
+        <ModalItem />
+      }
       <Headerbar />
       <div className="lists">
         {
@@ -32,6 +31,6 @@ const Board = ({ dispatch, match, currentBoard, lists }) => {
   )
 }
 
-const mapStateToprops = ({ currentBoard, lists }) => ({ currentBoard, lists })
+const mapStateToprops = ({ currentItem, lists }) => ({ currentItem, lists })
 
 export default connect(mapStateToprops)(Board)

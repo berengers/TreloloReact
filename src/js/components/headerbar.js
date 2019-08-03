@@ -6,7 +6,7 @@ const Headerbar = ({ currentBoard }) => {
 
   return (
     <div className="headerbar-a5738b70">
-      {name}
+      <h2>{name}</h2>
     </div>
   )
 }

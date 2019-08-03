@@ -2,8 +2,7 @@ import { RECEIVE_BOARD } from '../const'
 
 const defaultBoard = {
   id: null,
-  name: "",
-  lists: []
+  name: ""
 }
 
 export function currentBoard(state=defaultBoard, action) {

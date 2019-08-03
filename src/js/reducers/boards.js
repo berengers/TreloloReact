@@ -1,7 +1,6 @@
 import { RECEIVE_BOARDS, ADD_BOARD } from '../const'
 
 
-
 export function boards(state=[], action) {
   switch (action.type) {
     case RECEIVE_BOARDS:

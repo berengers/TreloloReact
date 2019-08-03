@@ -1,12 +1,12 @@
 import uuid from 'uuid/v4'
 import { push } from 'connected-react-router'
 
-import { RECEIVE_BOARD } from '../const'
+import { RECEIVE_BOARD, RECEIVE_LISTS } from '../const'
 
 const boards = [
   {
     id: 0,
-    name: 'Trelolo',
+    name: 'Trelolo Project',
     lists: [
       {
         id: 21,
@@ -44,13 +44,18 @@ const boards = [
   {
     id: 1,
     name: 'Travels',
+    lists: []
   }
 ]
 
 
 export function getBoard(id) {
   return dispatch => {
-    dispatch({ type: RECEIVE_BOARD, payload: { board: boards.find(el => el.id === id) } })
+    setTimeout(() => {
+      const { lists, ...boardLessLists } = boards.find(el => el.id === id)
+      dispatch({ type: RECEIVE_BOARD, payload: { board: boardLessLists } })
+      dispatch({ type: RECEIVE_LISTS, payload: { lists: lists } })
+    },2000)
   }
 }
 
@@ -61,7 +66,7 @@ export function createBoard(board) {
       name: board.name
     }
     dispatch(addBoard(newBoard))
-    dispatch(push(`/board/:${newBoard.id}`))
+    dispatch(push(`/board/${newBoard.id}`))
   }
 }
 
